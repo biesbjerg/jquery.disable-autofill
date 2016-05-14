@@ -14,7 +14,9 @@
 	}
 
 	Plugin.prototype.initialize = function() {
-		$(this.element)
+		var $element = $(this.element);
+		$element
+			.val($element.attr('value'))
 			.clone()
 			.removeAttr('id class required')
 			.insertBefore(this.element)
